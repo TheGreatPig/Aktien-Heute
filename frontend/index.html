@@ -4,46 +4,50 @@
         <link rel="stylesheet" href="styles.css">
         <title>Aktien Heute</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="./chart.js"></script>
-        <script src="./scripts.js"></script>
+        <script src="./scripts/chart.js"></script>
+        <script data-main="scripts/main" src="scripts/require.js"></script>
     </head>
 
-    <body>
+    <body onload="initCharts();">
         <div class="navbar">
-            <h2>Aktien Heute</h2>
+            <h2><a href="javascript:scrollToTop()">Aktien Heute</a></h2>
         </div>
 
         <div class="main-container">
             <div class="left-column">
-                trending stocks today are:
-                -Tesla
-                -Apple
-                -Fortnite
+                <h2> trending stocks </h2>
+                <p>Tesla</p>
+                <p>Amazon.com</p>
+                <p>Apple</p>
+                <p>AMD</p>
+                <p>NVIDIA</p>
+                <p>Microsoft</p>
+                <p>Meta</p>
             </div>
             <div class="middle-column-container">
                 <div class="middle-column-item">
-                    <img src="./stock-test.png">
+                    <canvas id="myChart" width="400" height="400"></canvas>
                 </div>
                 <div class="middle-column-item">
-                    <img src="./stock-test.png">
+                    <canvas id="myChart2" width="400" height="400"></canvas>
                 </div>
                 <div class="middle-column-item">
-                    <img src="./stock-test.png">
+                    <canvas id="myChart" width="400" height="400"></canvas>
                 </div>
                 <div class="middle-column-item">
-                    <img src="./stock-test.png">
+                    <canvas id="myChart" width="400" height="400"></canvas>
                 </div>
                 <div class="middle-column-item">
-                    <img src="./stock-test.png">
+                    <canvas id="myChart" width="400" height="400"></canvas>
                 </div>
                 <div class="middle-column-item">
-                    <img src="./stock-test.png">
+                    <canvas id="myChart" width="400" height="400"></canvas>
                 </div>
                 <div class="middle-column-item">
-                    <img src="./stock-test.png">
+                    <canvas id="myChart" width="400" height="400"></canvas>
                 </div>
                 <div class="middle-column-item">
-                    <img src="./stock-test.png">
+                    <canvas id="myChart" width="400" height="400"></canvas>
                 </div>
             </div>
             <div class="right-column"></div>

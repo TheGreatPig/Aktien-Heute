@@ -1,7 +1,8 @@
 import csv
+from numpy import full
 import requests
-import matplotlib.pyplot as plt
-plt.style.use('seaborn-whitegrid')
+import json
+# plt.style.use('seaborn-whitegrid')
 
 
 
@@ -14,54 +15,23 @@ with requests.Session() as s:
     cr = csv.reader(decoded_content.splitlines(), delimiter=',')
     data = list(cr)
 
-    x_coordinates = []
-    y_coordinates = []
+full_list = []
+temporary_list = {}
 
-    for y in data:
-        y_coordinates.append(y[1])
-        print(y)
-        
-    
-    x_coordinates = range(0,len(y_coordinates))
-    
-    plt.plot(x_coordinates, y_coordinates, color = 'black')
+for i in data:
+    if i[1] != 'open':
+        temporary_list['open'] = i[1]
+        temporary_list['high'] = i[2]
+        temporary_list['low'] = i[3]
+        temporary_list['close'] = i[4]
+        temporary_list['volume'] = i[5]
+        print(temporary_list)
+        full_list.append(temporary_list)
+        temporary_list = {}
 
-    x_coordinates, y_coordinates = [], []
 
-    for y in data:
-        y_coordinates.append(y[2])
+json_data = full_list
 
-    x_coordinates = range(0,len(y_coordinates))
 
-    plt.plot(x_coordinates, y_coordinates, color = 'blue')
-
-    x_coordinates, y_coordinates = [], []
-
-    for y in data:
-        y_coordinates.append(y[3])
-
-    x_coordinates = range(0,len(y_coordinates))
-
-    plt.plot(x_coordinates, y_coordinates, color = 'green')
-
-    x_coordinates, y_coordinates = [], []
-
-    for y in data:
-        y_coordinates.append(y[4])
-
-    x_coordinates = range(0,len(y_coordinates))
-
-    plt.plot(x_coordinates, y_coordinates, color = 'yellow')
-
-    x_coordinates, y_coordinates = [], []
-
-    for y in data:
-        y_coordinates.append(y[5])
-
-    x_coordinates = range(0,len(y_coordinates))
-
-    plt.plot(x_coordinates, y_coordinates, color = 'red')
-
-    x_coordinates, y_coordinates = [], []
-
-    plt.show()
+with open('../TSLA.json', 'w') as file:
+    json.dump(json_data, file, indent=4)

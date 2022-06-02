@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Gurmukhi&display=swap');
+
 :root {
     --nord0: #2e3440;
     --nord1: #3b4252;
@@ -20,17 +22,25 @@
 body {
     background-color: var(--nord0);
     color: var(--nord4);
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Tiro Gurmukhi', serif;
     margin: 0;
+    
 }
 
 h2 {
     text-align: center;
     margin-block: 15px;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--nord4);
 }
 
 .navbar {
     background-color: var(--nord1);
+    color: var(--nord4);
     position: fixed;
     width: 100%;
     top: 0;
