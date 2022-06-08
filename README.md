@@ -7,7 +7,6 @@ Wir haben eine Webseite entworfen, welche viele Aktiengraphen auf einmal anzeigt
     $ export FLASK_APP=src/flask_api.py  
     $ export FLASK_ENV=development
     $ flask run  
-    $ python2 -m SimpleHTTPServer 8080
 
 Im Browser auf http://127.0.0.1:5000/static/index.html gehen
 
